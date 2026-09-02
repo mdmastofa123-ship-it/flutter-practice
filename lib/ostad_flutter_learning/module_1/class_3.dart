@@ -187,9 +187,73 @@ int onehandfingers =5;
   print (bosta);
   print (" $alur bosta :");
 
-// git branching practice
+String? madrasar;
+print (madrasar ?? "nay" );
+
+String? mane;
+ mane = "fimel";
+print (mane ?? "male");
+
+//exmple2. ?. → Null-aware access →
+// veriable value . null হলে error না দিয়ে null দেয়,
+
+String? rekar;
+print (rekar?.length);
+
+String? ache= 'police';
+print (ache.length);
 
 
+//exmple 3. !  → Null assertion → programmer নিশ্চিত যে value null নয়,
+
+
+
+String? variable = "value";
+print (variable.length);
+
+String? boxe;
+print (boxe ?. length);
+//print (boxe !. length);
+
+String? mobail;
+mobail= "ios";
+print (mobail.length);
+
+
+String? phone;
+phone = "number";
+print (phone!.length);
+
+//exmple4. ??= → If null, assign → null হলে নতুন value assign করে,
+
+String? docoments;
+String fail = docoments ?? "free";
+print (fail);
+
+
+String? myname ;
+myname ??= "mastofa";
+print (myname);
+
+String? aryou;
+aryou="mane";
+print (aryou);
+
+
+  //if (x != null) → null কি না check
+
+ // exmple
+
+ String? ami = "hafej";
+  if (ami != null) {
+    print(ami.length);
+  }
+
+ //extra practice String? rater;
+   rater ??= "khabar";
+  if (rater != null) {
+    print (rater.length);
+  }
 
 
 
