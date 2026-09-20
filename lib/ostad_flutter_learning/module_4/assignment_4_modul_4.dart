@@ -1,82 +1,81 @@
-
-// Assignment, modul_4.dart
-
-
-//Book class
 class Book {
-
   String? booktitle;
   String? bookauthor;
   double bookprice;
 
   Book(this.booktitle, this.bookauthor, this.bookprice);
 
-  double discountedPrice(double discountpercent) {
+  double discountedPrice(double discountPercent) {
     double finalprice;
-    finalprice = bookprice - (bookprice * discountpercent / 100);
+    finalprice = bookprice - (bookprice * discountPercent / 100);
     return finalprice;
   }
 }
-void main () {
+
+void main() {
   Book book1 = Book("likhon", "mastofa", 1000);
   Book book2 = Book("pothon", "ahmed", 1000);
 
-
-
-  print (book1.booktitle);
-  print (book1.bookauthor);
-  print (book1.bookprice);
+  print(book1.booktitle);
+  print(book1.bookauthor);
+  print(book1.bookprice);
   print("book1 finalprice ${book1.discountedPrice(20)}");
-  print (book2.booktitle);
-  print (book2.bookauthor);
-  print (book2.bookprice);
-  print ("book2 finalprice ${book2.discountedPrice(20)}");
 
-    Manager Manager1 = Manager("abdur rahim" , "accounts");
+  print(book2.booktitle);
+  print(book2.bookauthor);
+  print(book2.bookprice);
+  print("book2 finalprice ${book2.discountedPrice(20)}");
 
-    Developer developer1 = Developer("abdur rahman", "dart");
+  Manager manager1 = Manager("abdur rahim", 50000, "accounts");
 
-    Fan fan1 = Fan();
-    Light light1 = Light();
+  Developer developer1 =
+  Developer("abdur rahman", 60000, "dart");
 
-    fan1.turnOn();
-    fan1.turnOff();
+  manager1.displayInfo();
+  developer1.displayInfo();
 
-    light1.turnOn();
-    light1.turnOff();
-  }
+  Fan fan1 = Fan();
+  Light light1 = Light();
 
-//Employee, Manager & Developer
+  fan1.turnOn();
+  fan1.turnOff();
 
-class Employee{
-
-  String? name;
-
-  Employee(this.name);
-
+  light1.turnOn();
+  light1.turnOff();
 }
 
+class Employee {
+  String? name;
+  double salary;
+
+  Employee(this.name, this.salary);
+}
 
 class Manager extends Employee {
   String? department;
 
-  Manager(String name,this.department,)
-      : super (name);
+  Manager(String name, double salary, this.department)
+      : super(name, salary);
 
+  void displayInfo() {
+    print("Manager Name: $name");
+    print("Salary: $salary");
+    print("Department: $department");
+  }
 }
-
-
 
 class Developer extends Employee {
   String? programmingLanguage;
 
-  Developer( String name, this.programmingLanguage)
-      : super (name);
+  Developer(String name, double salary, this.programmingLanguage)
+      : super(name, salary);
 
-
+  void displayInfo() {
+    print("Developer Name: $name");
+    print("Salary: $salary");
+    print("Programming Language: $programmingLanguage");
+  }
 }
-
-// Appliance, fan & Light
 
 abstract class Appliance {
   void turnOn();
@@ -95,16 +94,15 @@ class Fan extends Appliance {
     print("Fan is turned off");
   }
 }
-class Light extends Appliance{
-    @override
-void turnOn (){
-    print ("light is turned on");
-    }
+
+class Light extends Appliance {
   @override
-  void turnOff (){
-  print ("light is turned off");
+  void turnOn() {
+    print("Light is turned on");
   }
 
+  @override
+  void turnOff() {
+    print("Light is turned off");
+  }
 }
-
-
